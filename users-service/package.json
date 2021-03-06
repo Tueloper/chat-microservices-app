@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "watch": "ts-node-dev --respawn index.dev.ts"
+    "watch": "ts-node-dev --respawn index.dev.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"src/**/*.ts\"",
+    "build-ts": "tsc",
+    "db:migrate": "ts-node ./node_modules/typeorm/cli.js migration:run",
+    "db:migrate:undo": "ts-node ./node_modules/typeorm/cli.js migration:revert"
   },
   "devDependencies": {
     "@types/config": "^0.0.38",
