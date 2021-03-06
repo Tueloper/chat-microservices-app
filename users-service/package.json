@@ -3,11 +3,28 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "watch": "ts-node-dev --respawn index.dev.ts"
+    "watch": "ts-node-dev --respawn index.dev.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"src/**/*.ts\"",
+    "build-ts": "tsc",
+    "db:migrate": "ts-node ./node_modules/typeorm/cli.js migration:run",
+    "db:migrate:undo": "ts-node ./node_modules/typeorm/cli.js migration:revert"
   },
   "devDependencies": {
+    "@types/config": "^0.0.38",
+    "@types/node": "^14.14.31",
     "module-alias": "^2.2.2",
+    "ts-node": "^9.1.1",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "config": "^3.3.4",
+    "mysql2": "^2.2.5",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.31"
+  },
+  "_moduleAliases": {
+    "#root": "./src"
   }
 }
